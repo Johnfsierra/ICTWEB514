@@ -1,1 +1,86 @@
-hola
+// hola
+
+<?php
+// Include the database connection file
+include 'db.php';
+
+// Prepare the SQL query to get all products
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page - ICTWEB514</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional external stylesheet -->
+    <style>
+        /* Simple internal styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .product img {
+            max-width: 150px;
+            border-radius: 5px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product h2 {
+            margin: 0;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Our Products</h1>
+
+<?php
+// Check if the query returned any results
+if ($result->num_rows > 0) {
+    // Output data for each product
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="product">';
+        echo '<img src="' . htmlspecialchars($row["image"]) . '" alt="' . htmlspecialchars($row["name"]) . '">';
+        echo '<div class="product-details">';
+        echo '<h2>' . htmlspecialchars($row["name"]) . '</h2>';
+        echo '<p>' . htmlspecialchars($row["description"]) . '</p>';
+        echo '<p><strong>Price: $' . number_format($row["price"], 2) . '</strong></p>';
+        echo '</div>';
+        echo '</div>';
+    }
+} else {
+    echo "<p>No products found.</p>";
+}
+
+// Close the database connection
+$conn->close();
+?>
+
+</body>
+</html>
