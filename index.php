@@ -71,6 +71,10 @@ if ($result->num_rows > 0) {
         echo '<h2>' . htmlspecialchars($row["name"]) . '</h2>';
         echo '<p>' . htmlspecialchars($row["description"]) . '</p>';
         echo '<p><strong>Price: $' . number_format($row["price"], 2) . '</strong></p>';
+        echo '<form method="POST" action="delete.php" onsubmit="return confirm(\'Are you sure you want to delete this product?\');">';
+        echo '<input type="hidden" name="id" value="' . $row["id"] . '">';
+        echo '<button type="submit" style="background-color:red;color:white;border:none;padding:5px 10px;border-radius:4px;">Delete</button>';
+        echo '</form>';
         echo '</div>';
         echo '</div>';
     }
