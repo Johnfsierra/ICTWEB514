@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateStmt->bind_param("ssdsi", $name, $description, $price, $image, $id);
 
         if ($updateStmt->execute()) {
-            header("Location: index.php");
+            header("Location: index.php?success=Product+updated+successfully");
             exit();
         } else {
             echo "Error updating product: " . $conn->error;
