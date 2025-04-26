@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = floatval($_POST["price"]);
     $image = trim($_POST["image"]);
 
-    // Basic validation
+    // Basic validation: check if name is not empty and price is a positive number
     if (!empty($name) && $price > 0) {
         // Insert into database
         $sql = "INSERT INTO products (name, description, price, image) VALUES (?, ?, ?, ?)";
@@ -17,13 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssds", $name, $description, $price, $image);
 
         if ($stmt->execute()) {
+            // Success: redirect with success message
             header("Location: index.php?success=Product+added+successfully");
             exit();
         } else {
-            echo "Error adding product: " . $conn->error;
+            // Error inserting into database: redirect with error message
+            header("Location: index.php?error=Failed+to+add+product");
+            exit();
         }
     } else {
-        echo "Please enter a valid name and price.";
+        // Validation failed: redirect with error message
+        header("Location: index.php?error=Invalid+input+values");
+        exit();
     }
 }
 ?>
@@ -67,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <h2>Add New Product</h2>
+
 <form method="POST" action="add.php">
     <label>Product Name</label>
     <input type="text" name="name" required>
