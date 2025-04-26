@@ -3,7 +3,8 @@ include 'db.php';
 
 // Check if product ID is provided
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    die("Invalid product ID.");
+    header("Location: index.php?error=Invalid+product+ID");
+    exit();
 }
 
 $id = intval($_GET['id']);
@@ -16,7 +17,8 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    die("Product not found.");
+    header("Location: index.php?error=Product+not+found");
+    exit();
 }
 
 $product = $result->fetch_assoc();
@@ -37,10 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: index.php?success=Product+updated+successfully");
             exit();
         } else {
-            echo "Error updating product: " . $conn->error;
+            header("Location: index.php?error=Failed+to+update+product");
+            exit();
         }
     } else {
-        echo "Please provide a valid name and price.";
+        header("Location: index.php?error=Invalid+input+values");
+        exit();
     }
 }
 ?>
