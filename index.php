@@ -66,6 +66,15 @@ $result = $conn->query($sql);
 </p>
 
 <?php
+// Show success message if present in URL
+if (isset($_GET['success'])) {
+    echo '<p style="color: green; background-color: #e0ffe0; padding: 10px; border: 1px solid #b2d8b2; border-radius: 5px; max-width: 600px; margin: auto;">'
+         . htmlspecialchars($_GET['success']) . 
+         '</p>';
+}
+?>
+
+<?php
 // Check if the query returned any results
 if ($result->num_rows > 0) {
     // Output data for each product
