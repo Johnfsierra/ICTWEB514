@@ -13,7 +13,7 @@ if (isset($_POST['id']) && is_numeric($_POST['id'])) {
 
     if ($stmt->execute()) {
         // Redirect back to the index page
-        header("Location: index.php");
+        header("Location: index.php?success=Product+deleted+successfully");
         exit();
     } else {
         echo "Error deleting product: " . $conn->error;
