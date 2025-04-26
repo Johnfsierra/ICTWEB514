@@ -82,6 +82,8 @@ if ($result->num_rows > 0) {
         echo '<input type="hidden" name="id" value="' . $row["id"] . '">';
         echo '<button type="submit" style="background-color:red;color:white;border:none;padding:5px 10px;border-radius:4px;">Delete</button>';
         echo '</form>';
+        echo '<br>';
+        echo '<a href="edit.php?id=' . $row["id"] . '" style="display:inline-block;margin-top:10px;padding:5px 10px;background-color:orange;color:white;text-decoration:none;border-radius:4px;">Edit</a>';
 
         echo '</div>';
         echo '</div>';
