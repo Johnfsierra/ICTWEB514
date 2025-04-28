@@ -1,6 +1,6 @@
 <?php
 // Define database connection parameters
-$host = "localhost";        // Host name (usually localhost)
+$host = "127.0.0.1";        // Host name (usually localhost)
 $user = "root";             // Database username (default for XAMPP)
 $password = "";             // Password (leave empty if using XAMPP default)
 $database = "ictweb514_db"; // Name of the database you created in phpMyAdmin
