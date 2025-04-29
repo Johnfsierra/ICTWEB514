@@ -1,21 +1,21 @@
 <?php
-// Define database connection parameters
-$host = "127.0.0.1";        // Host name (usually localhost)
-$user = "root";             // Database username (default for XAMPP)
-$password = "";             // Password (leave empty if using XAMPP default)
-$database = "ictweb514_db"; // Name of the database you created in phpMyAdmin
+// Use a socket path for MAMP's MySQL server on Mac
+$host = "localhost";
+$user = "root";
+$password = "root"; // MAMP default password is **root**
+$database = "ictweb514_db";
 
-// Create a new MySQLi connection
-$conn = new mysqli($host, $user, $password, $database);
+// Use port and socket explicitly for MAMP
+$port = 8889; // MAMP's default MySQL port
+$socket = "/Applications/MAMP/tmp/mysql/mysql.sock";
 
-// Check if the connection was successful
+// Create connection
+$conn = new mysqli($host, $user, $password, $database, $port, $socket);
+
+// Check connection
 if ($conn->connect_error) {
-    // If not, stop execution and display error message
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Optional: set character set to UTF-8 for proper encoding
 $conn->set_charset("utf8");
-
-// The $conn variable will be used in other PHP scripts
 ?>
