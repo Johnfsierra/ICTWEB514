@@ -73,6 +73,14 @@ if (isset($_GET['success'])) {
          '</p>';
 }
 ?>
+<?php
+// Show error message if present in URL
+if (isset($_GET['error'])) {
+    echo '<p style="color: red; background-color: #ffe0e0; padding: 10px; border: 1px solid #d8b2b2; border-radius: 5px; max-width: 600px; margin: auto;">'
+         . htmlspecialchars($_GET['error']) . 
+         '</p>';
+}
+?>
 
 <?php
 // Check if the query returned any results
