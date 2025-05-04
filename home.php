@@ -2,8 +2,8 @@
 // Connect to new database
 include 'home_db.php';
 
-// Fetch products from the new DB
-$sql = "SELECT * FROM products";
+// Fetch properties from the new DB
+$sql = "SELECT * FROM properties";
 $result = $conn->query($sql);
 ?>
 
@@ -29,16 +29,18 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';
-        echo '<img src="' . htmlspecialchars($row["image"]) . '" alt="' . htmlspecialchars($row["name"]) . '">';
+        echo '<img src="' . htmlspecialchars($row["image"]) . '" alt="' . htmlspecialchars($row["title"]) . '">';
         echo '<div class="card-body">';
-        echo '<h2>' . htmlspecialchars($row["name"]) . '</h2>';
+        echo '<h2>' . htmlspecialchars($row["title"]) . '</h2>';
         echo '<p>' . htmlspecialchars($row["description"]) . '</p>';
+        echo '<p><strong>Type:</strong> ' . htmlspecialchars($row["type"]) . ' | ';
+        echo '<strong>Bedrooms:</strong> ' . htmlspecialchars($row["bedrooms"]) . '</p>';
         echo '<p class="price">$' . number_format($row["price"], 2) . '</p>';
         echo '</div>';
         echo '</div>';
       }
     } else {
-      echo '<p>No products found.</p>';
+      echo '<p>No properties found.</p>';
     }
     $conn->close();
     ?>
