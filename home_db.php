@@ -1,6 +1,6 @@
 <?php
 // Define connection to the cloned database
-$host = "127.0.0.1";
+$host = "localhost";
 $user = "root";
 $password = "";
 $database = "home_ictweb514"; // New duplicated DB name
