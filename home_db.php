@@ -2,7 +2,7 @@
 // Define connection to the cloned database
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $database = "home_ictweb514"; // New duplicated DB name
 
 $conn = new mysqli($host, $user, $password, $database);
