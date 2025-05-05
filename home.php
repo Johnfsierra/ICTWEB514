@@ -23,6 +23,13 @@ $result = $conn->query($sql);
   </div>
 </header>
 
+<p style="text-align:center; margin-top: 20px;">
+  <a href="register.php" style="padding: 10px 15px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+    New Customer? Register Here
+  </a>
+</p>
+
+
 <main class="container">
   <section class="product-grid">
     <?php
