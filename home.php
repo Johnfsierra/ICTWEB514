@@ -48,7 +48,7 @@ $result = $conn->query($sql);
 </main>
 
 <footer>
-  <p>&copy; 2024 Real Estate Demo. All rights reserved.</p>
+  <p>&copy; 2025 Real Estate Demo. All rights reserved.</p>
 </footer>
 
 </body>
