@@ -1,127 +1,131 @@
-/* General Reset */
+/* ========== General Reset ========== */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  /* Header Hero */
-  .hero {
-    background: url('img/banner.jpg') no-repeat center center/cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
-  }
-  
-  .hero-content {
-    position: relative; /* puts content above overlay */
-    z-index: 1;
-  }
-  
-  
-  /* Container */
-  .container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  /* Product Cards */
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    padding: 15px;
-  }
-  
-  .card-body h2 {
-    margin: 0 0 10px;
-    font-size: 1.2em;
-  }
-  
-  .card-body p {
-    margin: 5px 0;
-  }
-  
-  .price {
-    font-weight: bold;
-    color: #007bff;
-    font-size: 1.1em;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: #eee;
-  }
-  .register-btn {
-    padding: 10px 15px;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .login-btn {
-    padding: 10px 15px;
-    background-color: darkblue;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ========== Header Hero Section ========== */
+.hero {
+  background: url('img/banner.jpg') no-repeat center center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== Auth Buttons Section ========== */
+.auth-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.auth-buttons a {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.register-btn {
+  background-color: green;
+  color: white;
+}
+
+.login-btn {
+  background-color: darkblue;
+  color: white;
+}
+
+/* ========== Container Layout ========== */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ========== Product Cards ========== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h2 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.card-body p {
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.1em;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #eee;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
   .auth-buttons {
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth-buttons a {
+    width: 90%;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
   }
-  
-  @media (max-width: 600px) {
-    .auth-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .auth-buttons a {
-      width: 90%;
-      text-align: center;
-    }
-  }
-  
+}
