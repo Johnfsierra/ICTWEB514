@@ -28,6 +28,7 @@ $result = $conn->query($sql);
   <a href="login.php" class="login-btn">Already Registered? Log In</a>
 </div>
 
+
 <main class="container">
   <section class="product-grid">
     <?php
