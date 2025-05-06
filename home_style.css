@@ -89,13 +89,34 @@ body {
     background: #222;
     color: #eee;
   }
+  .register-btn {
+    padding: 10px 15px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .login-btn {
+    padding: 10px 15px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .auth-buttons {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
   
   @media (max-width: 600px) {
     .auth-buttons {
-      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
     }
   
     .auth-buttons a {
