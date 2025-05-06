@@ -30,6 +30,7 @@ $result = $conn->query($sql);
 
 
 
+
 <main class="container">
   <section class="product-grid">
     <?php
