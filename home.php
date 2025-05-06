@@ -29,6 +29,7 @@ $result = $conn->query($sql);
 </div>
 
 
+
 <main class="container">
   <section class="product-grid">
     <?php
