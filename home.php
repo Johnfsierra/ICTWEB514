@@ -24,15 +24,9 @@ $result = $conn->query($sql);
 </header>
 
 <div class="auth-buttons">
-  <a href="register.php" class="register-btn">
-    New Customer? Register Here
-  </a>
-  <a href="login.php" class="login-btn">
-    Already Registered? Log In
-  </a>
+  <a href="register.php" class="register-btn">New Customer? Register Here</a>
+  <a href="login.php" class="login-btn">Already Registered? Log In</a>
 </div>
-
-
 
 <main class="container">
   <section class="product-grid">
