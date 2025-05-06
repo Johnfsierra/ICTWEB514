@@ -23,15 +23,14 @@ $result = $conn->query($sql);
   </div>
 </header>
 
-<p style="text-align:center; margin-top: 20px;">
-  <a href="register.php" style="padding: 10px 15px; background-color: green; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">
+<div class="auth-buttons" style="margin-top: 20px; text-align: center;">
+  <a href="register.php" style="padding: 10px 15px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
     New Customer? Register Here
   </a>
-  <a href="login.php" style="padding: 10px 15px; background-color: navy; color: white; text-decoration: none; border-radius: 5px;">
+  <a href="login.php" style="padding: 10px 15px; background-color: darkblue; color: white; text-decoration: none; border-radius: 5px;">
     Already Registered? Log In
   </a>
-</p>
-
+</div>
 
 
 <main class="container">
